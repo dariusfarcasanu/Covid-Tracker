@@ -25,7 +25,7 @@ header {
   background: linear-gradient(to right, #ff9068, #fd746c);
   text-align: center;
   line-height: 2.5rem;
-
+  position: relative;
   padding: 20px;
 }
 
@@ -33,7 +33,16 @@ header h1 {
   text-transform: uppercase;
 }
 
+header img {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 0;
+  left: 100px;
+}
+
 .data-container {
+  background-color: white;
   height: 400px;
   width: 50%;
   margin: 35px auto 35px;
@@ -44,16 +53,17 @@ header h1 {
   box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
   border-radius: 5px;
   color: #3f3f44;
+  z-index: 100;
 }
 
 .footer {
   text-align: center;
+  font-size: 0.8rem;
 }
 
 .footer a {
   text-decoration: none;
   color: #e9896a;
-  transform: scale(1.2);
 }
 
 .footer a:hover {
