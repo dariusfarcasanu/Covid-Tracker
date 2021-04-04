@@ -50,6 +50,7 @@ header img {
   padding: 10px;
   border: none;
   width: 200px;
+  outline: none;
 }
 
 .data-container {

@@ -1,55 +1,16 @@
-// window.onload = function () {
-//   getCovidStats();
-// };
-
-// const cases = document.getElementById('cases');
-// const deaths = document.getElementById('deaths');
-// const percent = document.getElementById('percent');
-// const country = document.getElementById('country');
-// const population = document.getElementById('population');
-// const update = document.getElementById('update');
-
-// function getCovidStats() {
-//   fetch('https://coronavirus-tracker-api.herokuapp.com/v2/locations/212')
-//     .then(resp => resp.json())
-//     .then(data => {
-//       let country = data.location.country;
-//       let population = data.location.country_population;
-//       let cases = data.location.latest.confirmed;
-//       let update = data.location.last_updated;
-//       let deaths = data.location.latest.deaths;
-
-//       document.getElementById('country').innerHTML = country;
-//       document.getElementById(
-//         'population'
-//       ).innerHTML = population.toLocaleString('en');
-//       document.getElementById('cases').innerHTML = cases.toLocaleString('en');
-//       document.getElementById('deaths').innerHTML = deaths.toLocaleString('en');
-//       document.getElementById('update').innerHTML = update.substr(0, 10);
-
-//       document.getElementById('percent').innerHTML =
-//         ((Number(deaths) / Number(cases)) * 100).toLocaleString('en', {
-//           minimumFractionDigits: 2,
-//           maximumFractionDigits: 2,
-//         }) + '%';
-//     })
-//     .catch(err => console.log(err));
-
-//   setTimeout(getCovidStats, 43200000); //It gets updated every 12 hours
-// }
-
 window.onload = function () {
   getCovidCountries();
-  // getSelectData();
 };
 
 const selectTag = document.querySelector('select');
-// const cases = document.getElementById('cases');
-// const deaths = document.getElementById('deaths');
-// const percent = document.getElementById('percent');
-// const country = document.getElementById('country');
-// const population = document.getElementById('population');
-// const update = document.getElementById('update');
+const country = document.getElementById('country');
+const cases = document.getElementById('cases');
+const population = document.getElementById('population');
+const recovered = document.getElementById('recovered');
+const deaths = document.getElementById('deaths');
+const today = document.getElementById('today');
+//We created a function that gets the countries from the API
+//and adds them to the select options
 
 function getCovidCountries() {
   fetch('https://corona.lmao.ninja/v2/countries')
@@ -67,29 +28,26 @@ function getCovidCountries() {
     .catch(err => console.log(err));
 }
 
+//Function to fetch the data from the external API and add the
+//data to the interface
+
 function getData() {
-  // country.innerHTML = selectTag.value;
   fetch(`https://corona.lmao.ninja/v2/countries/${selectTag.value}`)
     .then(resp => resp.json())
     .then(data => {
-      let country = data.country;
+      let countryData = data.country;
+      let casesData = data.cases;
+      let populationData = data.population;
+      let recoveredData = data.recovered;
+      let deathsData = data.deaths;
+      let todayData = data.todayDeaths;
 
-      let cases = data.cases;
-      let population = data.population;
-      let recovered = data.recovered;
-      let deaths = data.deaths;
-      let today = data.todayDeaths;
-
-      document.getElementById('country').innerHTML = country;
-      document.getElementById('cases').innerHTML = cases.toLocaleString('en');
-      document.getElementById(
-        'population'
-      ).innerHTML = population.toLocaleString('en');
-      document.getElementById('recovered').innerHTML = recovered.toLocaleString(
-        'en'
-      );
-      document.getElementById('deaths').innerHTML = deaths.toLocaleString('en');
-      document.getElementById('today').innerHTML = today.toLocaleString('en');
+      country.innerHTML = countryData;
+      cases.innerHTML = casesData.toLocaleString('en');
+      population.innerHTML = populationData.toLocaleString('en');
+      recovered.innerHTML = recoveredData.toLocaleString('en');
+      deaths.innerHTML = deathsData.toLocaleString('en');
+      today.innerHTML = todayData.toLocaleString('en');
     })
 
     .catch(err => console.log(err));
