@@ -41,6 +41,17 @@ header img {
   left: 100px;
 }
 
+.select-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.select-container select {
+  padding: 10px;
+  border: none;
+  width: 200px;
+}
+
 .data-container {
   background-color: white;
   height: 400px;
