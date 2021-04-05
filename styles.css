@@ -25,20 +25,28 @@ header {
   background: linear-gradient(to right, #ff9068, #fd746c);
   text-align: center;
   line-height: 2.5rem;
-  position: relative;
   padding: 20px;
+  display: flex;
 }
 
-header h1 {
+.image-container img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+  width: 150px;
+  margin-left: 30px;
+}
+
+.title {
+  margin-left: 250px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.title h1 {
   text-transform: uppercase;
-}
-
-header img {
-  width: 120px;
-  height: 120px;
-  position: absolute;
-  top: 0;
-  left: 100px;
 }
 
 .select-container {
@@ -58,6 +66,7 @@ header img {
   height: 400px;
   width: 50%;
   margin: 35px auto 35px;
+  padding: 10px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -80,4 +89,26 @@ header img {
 
 .footer a:hover {
   color: black;
+}
+
+@media screen and (max-width: 960px) {
+  header {
+    flex-direction: column;
+  }
+
+  .title {
+    margin: 0;
+  }
+
+  .image-container {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .data-container {
+    flex-direction: column;
+    height: 700px;
+    justify-content: center;
+  }
 }
