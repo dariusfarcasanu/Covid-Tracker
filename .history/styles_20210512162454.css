@@ -24,7 +24,7 @@ h3 {
 header {
   /* background: linear-gradient(to right, #ff9068, #fd746c); */
 
-  background: #aad8d3;
+  background: linear-gradient(to right, #ff8008, #ffc837);
 
   text-align: center;
   line-height: 2.5rem;
@@ -94,7 +94,7 @@ header {
 
 .footer a {
   text-decoration: none;
-  color: #66aca4;
+  color: #e9896a;
 }
 
 .footer a:hover {

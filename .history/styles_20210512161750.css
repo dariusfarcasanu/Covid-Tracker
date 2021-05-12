@@ -22,13 +22,9 @@ h3 {
 }
 
 header {
-  /* background: linear-gradient(to right, #ff9068, #fd746c); */
-
-  background: #aad8d3;
-
+  background: linear-gradient(to right, #ff9068, #fd746c);
   text-align: center;
   line-height: 2.5rem;
-  height: 150px;
   padding: 20px;
   display: flex;
   justify-content: center;
@@ -37,8 +33,6 @@ header {
 
 .image-container img {
   position: absolute;
-  top: 0;
-  left: 50px;
   max-width: 100%;
   display: block;
   height: auto;
@@ -52,7 +46,6 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-left: 20px;
 }
 .title h1 {
   text-transform: uppercase;
@@ -89,12 +82,11 @@ header {
 .footer {
   text-align: center;
   font-size: 0.8rem;
-  padding: 20px;
 }
 
 .footer a {
   text-decoration: none;
-  color: #66aca4;
+  color: #e9896a;
 }
 
 .footer a:hover {
